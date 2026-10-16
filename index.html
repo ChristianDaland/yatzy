@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy 3D</title>
+    <link rel="stylesheet" href="style.css?v=12">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        /* Innebygd styling for tilbake-knappen */
+        .back-btn {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .back-btn:hover {
+            color: #ffffff;
+            background-color: #334155;
+            border-color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top-header">
+        <a href="../" class="back-btn">← Hovedmeny</a>
+        <div class="logo">YATZY <span>3D</span></div>
+        <div class="info">
+            <span id="current-player">Spiller: -</span>
+            <span id="rolls-left">Kast igjen: 3</span>
+        </div>
+    </header>
+
+    <div id="main-wrapper">
+        <div id="left-container">
+            <div id="dice-container"></div>
+            <div id="button-bar">
+                <button id="roll-btn">KAST TERNINGER</button>
+            </div>
+        </div>
+
+        <div id="right-container">
+            <h2>Poeng</h2>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr id="scoreboard-header">
+                            <th>Kategori</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scoreboard-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="setup-overlay">
+        <div class="modal">
+            <h2>Start Nytt Spill</h2>
+            <p>Spillernavn (kommaseparert):</p>
+            <input type="text" id="player-names-input" value="Heidi, Christian">
+            <button id="start-game-btn">START SPILL</button>
+        </div>
+    </div>
+
+    <script src="dice_scene.js?v=12"></script>
+    <script src="main.js?v=12"></script>
+</body>
+</html>
